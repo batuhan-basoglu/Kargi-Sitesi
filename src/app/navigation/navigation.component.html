@@ -1,0 +1,99 @@
+<!--Beginning of header-->
+<div id="header" class="nav-collapse nav-solid">
+  <div class="row clearfix">
+    <div class="col-1">
+      <!--Logo-->
+      <div id="logo">
+        <!--Logo that is shown on the banner-->
+        <img src="assets/images/logo.jpg" id="banner-logo" alt="Landing Page" />
+        <!--End of Banner Logo-->
+
+        <!--The Logo that is shown on the sticky Navigation Bar-->
+        <img
+          src="assets/images/logo-2.jpg"
+          id="navigation-logo"
+          alt="Landing Page"
+        />
+        <!--End of Navigation Logo-->
+      </div>
+      <!--End of Logo-->
+      <aside>
+        <app-social></app-social>
+      </aside>
+
+      <!--Main Navigation-->
+      <nav id="nav-main">
+        <ul>
+          <li>
+            <a
+              routerLink="/Anasayfa"
+              (click)="getActiveTab('anasayfa')"
+              [class.active]="activetab === 'anasayfa'"
+              >Anasayfa</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/Kurumsal"
+              (click)="getActiveTab('kurumsal')"
+              [class.active]="activetab === 'kurumsal'"
+              >Hakkımızda</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/Hizmetlerimiz"
+              (click)="getActiveTab('hizmetlerimiz')"
+              [class.active]="activetab === 'hizmetlerimiz'"
+              >Hİzmetlerİmİz</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/Sitegörselleri"
+              (click)="getActiveTab('sitegörselleri')"
+              [class.active]="activetab === 'sitegörselleri'"
+              >Sİte Görsellerİ</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/Duyurular"
+              (click)="getActiveTab('duyurular')"
+              [class.active]="activetab === 'duyurular'"
+              >Duyurular</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/Faaliyet"
+              (click)="getActiveTab('faaliyet')"
+              [class.active]="activetab === 'faaliyet'"
+              >Faalİyet RaporlarI</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/Genelkurul"
+              (click)="getActiveTab('genelkurul')"
+              [class.active]="activetab === 'genelkurul'"
+              >Genel Kurul KararlarI</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/Iletisim"
+              (click)="getActiveTab('iletisim')"
+              [class.active]="activetab === 'iletisim'"
+              >İletİşİm</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!--End of Main Navigation-->
+      <div id="nav-trigger"><span></span></div>
+      <nav id="nav-mobile"></nav>
+    </div>
+  </div>
+</div>
+<!--End of Header-->

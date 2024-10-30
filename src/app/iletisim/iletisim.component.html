@@ -1,0 +1,80 @@
+<!--Iletisim-->
+<section id="iletisim" class="scrollto clearfix">
+  <div class="row clearfix">
+
+    <div class="col-3">
+
+      <div class="section-heading">
+        <h3>İLETİŞİM</h3>
+        <h2 class="section-title">İletişim Bilgileri</h2>
+        <p class="section-subtitle">
+          Kargı Sitesi<br>
+          Kargı Caddesi 48420<br>
+          Ortakent-Yahşi Bulvarı<br>
+          Muğla, Bodrum<br>
+          Telefon:</p>
+      </div>
+
+    </div>
+
+    <div class="col-2-3">
+      <br>
+      <agm-map [latitude]="lat" [longitude]="lng" [mapDraggable]="false" [zoom]="17" [scrollwheel]="false">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </div>
+
+
+    <div class="col-1">
+      <div class="section-heading">
+        <h2 class="section-title">Bize Ulaşın</h2>
+        <div class="fcf-form-wrap">
+          <div id="fcf-form">
+            <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+              <div class="form-group">
+                <label for="Name" class="label has-text-weight-normal">İsminiz</label><br>
+                <input type="text" class="form-control" name="Name" formControlName="Name" maxlength="100" size="30">
+                <div [hidden]="Name.pristine || Name.valid" class="alert alert-danger">
+                  <div style="color:#ff0000">İsim gerekli.</div>
+                </div>
+                <br>
+              </div>
+              <div class="form-group">
+                <label for="Email" class="label has-text-weight-normal">E-Mailiniz</label><br>
+                <input type="email" class="form-control" name="Email" aria-describedby="emailHelp"
+                  formControlName="Email" maxlength="100" size="30">
+                <div [hidden]="Email.pristine || Email.valid" class="alert alert-danger">
+                  <div style="color:#ff0000">Doğru bir e-mail adresi gerekli.</div>
+                </div>
+                <br>
+              </div>
+              <div class="form-group">
+                <label for="Phone" class="label has-text-weight-normal">Telefonunuz (Gerekli Değil)</label><br>
+                <input type="text" class="form-control" name="Phone" formControlName="Phone" maxlength="30" size="30">
+                <div [hidden]="Phone.pristine || Phone.valid" class="alert alert-danger">
+                  <div style="color:#ff0000">Telefon numarası numerik olmalı.</div>
+                </div>
+                <br>
+              </div>
+              <div class="form-group">
+                <label for="Message" class="label has-text-weight-normal">Mesajınız</label><br>
+                <textarea class="form-control" formControlName="Message" name="Message" maxlength="3000" rows="8"
+                  cols="50"></textarea>
+                <div [hidden]="Message.pristine || Message.valid" class="alert alert-danger">
+                  <div style="color:#ff0000">Mesaj gerekli.</div>
+                </div>
+                <br>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="button is-link is-medium is-fullwidth"
+                  [disabled]="!FormData.valid">Gönderin</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!--End of Iletisim-->
