@@ -20,39 +20,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServicesService } from './services.service';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HizmetlerimizComponent,
-    SitegörselleriComponent,
-    GenelkurulComponent,
-    FaaliyetComponent,
-    KurumsalComponent,
-    FooterComponent,
-    IletisimComponent,
-    DuyurularComponent,
-    AnasayfaComponent,
-    Duyuru1Component,
-    Duyuru2Component,
-    Duyuru3Component,
-    SocialComponent,
-    NavigationComponent,
-  ],
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    BrowserModule, 
-    AppRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC5TiZoTEwEcB_HUZRhe_rXrcSWW1Z5x8I'
-    })
-  ],
-  providers: [
-    ServicesService
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HizmetlerimizComponent,
+        SitegörselleriComponent,
+        GenelkurulComponent,
+        FaaliyetComponent,
+        KurumsalComponent,
+        FooterComponent,
+        IletisimComponent,
+        DuyurularComponent,
+        AnasayfaComponent,
+        Duyuru1Component,
+        Duyuru2Component,
+        Duyuru3Component,
+        SocialComponent,
+        NavigationComponent,
+    ],
+    bootstrap: [AppComponent], imports: [FormsModule,
+        ReactiveFormsModule,
+        BrowserModule,
+        AppRoutingModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyC5TiZoTEwEcB_HUZRhe_rXrcSWW1Z5x8I'
+        })], providers: [
+        ServicesService,
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule {}
